@@ -17,37 +17,37 @@ public class Library extends Building {
    * @param title the book-to-be-added's title
    */
   public void addTitle(String title) {
-   try {
-    this.collection.put(title, true);
-      } catch (InputMismatchException e) {
+    try {
+      this.collection.put(title, true);
+    } catch (InputMismatchException e) {
       System.out.println("Please enter a valid title"); // exception catching for if we use a scanner later on to add residents
     }
   }
-   
- /**
+
+  /**
    * removes a title from the collection hashtable
    * 
    * @param title the book-to-be-removed's title
-   * @return the title of the removed book 
+   * @return the title of the removed book
    */
-  public String removeTitle(String title){
+  public String removeTitle(String title) {
     this.collection.remove(title);
     return title;
   }
 
- /**
+  /**
    * checks out a book by setting the key's value to false
    * 
    * @param title the book-to-be-checked out's title
    * 
    */
-  public void checkOut(String title){
-  // if(this.collection.contains(title)){
+  public void checkOut(String title) {
+    // if(this.collection.contains(title)){
     this.collection.replace(title, false);
-  // }
-  // else{
-  //   throw new RuntimeException("You can't check out this book, sorry!");
-  // }
+    // }
+    // else{
+    // throw new RuntimeException("You can't check out this book, sorry!");
+    // }
   }
 
   /**
@@ -56,49 +56,47 @@ public class Library extends Building {
    * @param title the book-to-be-returned's title
    * 
    */
-  public void returnBook(String title){
+  public void returnBook(String title) {
     this.collection.replace(title, true);
   }
 
-/**
- * returns true if the title appears as a key in the Libary's collection, false otherwise
- * @param title
- * @return T/F is the title a key in the Library collection?
- */
-  public boolean containsTitle(String title){
-    if(this.collection.containsKey(title)){
+  /**
+   * returns true if the title appears as a key in the Libary's collection, false
+   * otherwise
+   * 
+   * @param title
+   * @return T/F is the title a key in the Library collection?
+   */
+  public boolean containsTitle(String title) {
+    if (this.collection.containsKey(title)) {
       return true;
-    }
-    else{
+    } else {
       return false;
     }
   }
-
 
   /**
    * returns true if the title is currently available, false otherwise
-   * @param title 
+   * 
+   * @param title
    * @return T/F whether the title is availble to checkout
    */
-  public boolean isAvailable(String title){
-    if(this.collection.get(title)){
+  public boolean isAvailable(String title) {
+    if (this.collection.get(title)) {
       return true;
-    }
-    else{
+    } else {
       return false;
     }
   }
 
-
-   /**
-   * prints out the entire collection in an easy-to-read way (including checkout status)
+  /**
+   * prints out the entire collection in an easy-to-read way (including checkout
+   * status)
    */
-  public void printCollection(){
+  public void printCollection() {
     // System.out.println(this.collection.toString());
     System.out.println("Titles in Collection: " + this.collection.keySet() + " Availible?: " + this.collection.entrySet());
   }
-
-
 
   public static void main(String[] args) {
     Library n = new Library("Nielson", "address", 4);

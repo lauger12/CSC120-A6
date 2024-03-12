@@ -79,7 +79,8 @@ public class House extends Building {
         throw new RuntimeException("Hey you're not in this house! You can't move out!");
       }
     } catch (InputMismatchException d) {
-      System.out.println("Please enter a string"); // this is if we use a scanner later, and someone enters a non-string value
+      System.out.println("Please enter a string"); // this is if we use a scanner later, and someone enters a non-string
+                                                   // value
       return name;
     } catch (RuntimeException f) {
       System.out.println(f.getMessage());

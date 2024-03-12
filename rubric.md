@@ -30,32 +30,33 @@ __part__ 1 pt: The `Library` class implements the requested additional methods (
 
 ### Level 3: `Cafe.java` (3 pts)
 
-_____ 1 pt: The `Cafe` class includes the requested attributes
+__yes__ 1 pt: The `Cafe` class includes the requested attributes
 
-_____ 1 pt: The `Cafe` class keeps the inventory up to date, based on sales
+__yes__ 1 pt: The `Cafe` class keeps the inventory up to date, based on sales
 
-_____ 1 pt: The `Cafe` class uses the `restock(...)` method to avoid running out of inventory.
+__yes__ 1 pt: The `Cafe` class uses the `restock(...)` method to avoid running out of inventory.
 
 
 
 ## General Items:
 
-_____ 4 pts: Programs compile without errors or warnings
+__yes__ 4 pts: Programs compile without errors or warnings
 
-_____ 2 pts: Executes fully & consistently without crashing (exception/freeze)
+__part__ 2 pts: Executes fully & consistently without crashing (exception/freeze)
+<yes?/part/still some exception catches and throws I could write to cover absolutely everything!>
 
-_____ 2 pt: Complies with style guidelines (missing items 1 pt each):
+__yes__ 2 pt: Complies with style guidelines (missing items 1 pt each):
 
-      _____ Classes & class members all have Javadoc header comments
+      __yes___ Classes & class members all have Javadoc header comments
 
-      _____ Clear and consistent indentation of bracketed sections
+      __yes___ Clear and consistent indentation of bracketed sections
 
-      _____ Adheres to Java conventions on naming & capitalization
+      __yes___ Adheres to Java conventions on naming & capitalization
 
-      _____ Methods & variables all have clear and accurate names
+      __yes___ Methods & variables all have clear and accurate names
 
-      _____ Methods avoid confusing side effects
+      __yes___ Methods avoid confusing side effects
 
-_____ 1 pt: All required files included with submission (including completed `rubric.md` file)
+__yes__ 1 pt: All required files included with submission (including completed `rubric.md` file)
 
-_____ 1 pt: `reflection.md` contains your reflection on the assignment
+__yes__ 1 pt: `reflection.md` contains your reflection on the assignment
