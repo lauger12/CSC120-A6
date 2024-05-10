@@ -5,6 +5,12 @@ public class Library extends Building {
 
   private Hashtable<String, Boolean> collection;
 
+  /**
+   * Constructor for Library
+   * @param name
+   * @param address
+   * @param nFloors
+   */
   public Library(String name, String address, int nFloors) {
     super(name, address, nFloors);
     this.collection = new Hashtable<String, Boolean>();
@@ -25,41 +31,43 @@ public class Library extends Building {
   }
 
   /**
-   * removes a title from the collection hashtable
-   * 
-   * @param title the book-to-be-removed's title
-   * @return the title of the removed book
-   */
-  public String removeTitle(String title) {
-    this.collection.remove(title);
-    return title;
-  }
-
-  /**
    * checks out a book by setting the key's value to false
    * 
    * @param title the book-to-be-checked out's title
    * 
    */
   public void checkOut(String title) {
-    // if(this.collection.contains(title)){
-    this.collection.replace(title, false);
-    // }
-    // else{
-    // throw new RuntimeException("You can't check out this book, sorry!");
-    // }
+    if (isAvailable(title)) {
+      try {
+      this.collection.put(title, true);
+      } catch (InputMismatchException d) {
+        System.out.println("Please enter a valid title");
+      }
+    } else {
+      throw new RuntimeException("You can't check out this book, sorry!");
+    }
   }
 
   /**
-   * returns a book by setting the key's value to true
+   * removes a title from the collection hashtable
    * 
-   * @param title the book-to-be-returned's title
-   * 
+   * @param title the book-to-be-removed's title
+   * @return the title of the removed book
    */
-  public void returnBook(String title) {
-    this.collection.replace(title, true);
+  public String removeTitle(String title) {
+    if (this.collection.contains(title)) {
+      try {
+        this.collection.remove(title);
+      } catch (InputMismatchException f) {
+        System.out.println("Please enter a valid title");
+      }
+    } else {
+      System.out.println("Collection doesn't contain the book you're trying to remove");
+    }
+    return title;
   }
 
+ 
   /**
    * returns true if the title appears as a key in the Libary's collection, false
    * otherwise
@@ -82,9 +90,17 @@ public class Library extends Building {
    * @return T/F whether the title is availble to checkout
    */
   public boolean isAvailable(String title) {
-    if (this.collection.get(title)) {
-      return true;
-    } else {
+    try {
+      if (this.collection.get(title)) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (InputMismatchException g) {
+      System.out.println("Please enter a valid title");
+      return false;
+    } catch (RuntimeException l){
+      System.out.println("This title is not in the current collection"); // catching a null pointer exception if the book isn't in collection
       return false;
     }
   }

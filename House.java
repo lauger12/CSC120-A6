@@ -7,6 +7,14 @@ public class House extends Building {
   private boolean hasDiningRoom;
   private boolean hasElevator;
 
+  /**
+   * Constructor for House
+   * @param name
+   * @param address
+   * @param nFloors
+   * @param hasDiningRoom
+   * @param hasElevator
+   */
   public House(String name, String address, int nFloors, boolean hasDiningRoom, boolean hasElevator) {
     super(name, address, nFloors);
     this.hasDiningRoom = hasDiningRoom;
@@ -19,7 +27,7 @@ public class House extends Building {
    * 
    * @return T/F value for whether the house has a dining room
    */
-  public boolean getHasDiningRoom() {
+  public boolean hasDiningRoom() {
     return this.hasDiningRoom;
   }
 
@@ -51,18 +59,6 @@ public class House extends Building {
    * // * @param name name of resident
    * //
    */
-  // public String moveOut(String name) { // return the name of the person who
-  // moved out
-  // if (this.residents.contains(name)) {
-  // this.residents.remove(name);
-  // // System.out.println("Resident " + name + " has moved out of " + this.name);
-  // return name;
-  // }
-  // else{
-  // throw new RuntimeException("You are not even in this house..."); // if we use
-  // scanners later we're going to need something to catch this
-  // }
-  // }
 
   /**
    * Adds a given resident to the residents ArrayList

@@ -5,6 +5,16 @@ public class Cafe extends Building {
     private int nCreams; // The number of "splashes" of cream remaining in inventory
     private int nCups; // The number of cups remaining in inventory
 
+    /**
+     * Constructor for Cafe
+     * @param name
+     * @param address
+     * @param nFloors
+     * @param nCoffeeOunces
+     * @param nSugarPackets
+     * @param nCreams
+     * @param nCups
+     */
     public Cafe(String name, String address, int nFloors, int nCoffeeOunces, int nSugarPackets, int nCreams,
             int nCups) {
         super(name, address, nFloors);
@@ -38,17 +48,17 @@ public class Cafe extends Building {
 
     /**
      * restocks cafe materials by adding the needed values for the order
-     * 
+     * bulk order method: 100 each
      * @param nCoffeeOunces
      * @param nSugarPackets
      * @param nCreams
      * @param nCups
      */
     private void restock(int size, int nSugarPackets, int nCreams, int nCups) {
-        this.nCoffeeOunces += size;
-        this.nSugarPackets += nSugarPackets;
-        this.nCreams += nCreams;
-        this.nCups += 1;
+        this.nCoffeeOunces += 100;
+        this.nSugarPackets += 100;
+        this.nCreams += 100;
+        this.nCups += 100;
     }
 
 
