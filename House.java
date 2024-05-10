@@ -32,11 +32,11 @@ public class House extends Building {
   }
 
   /**
-   * Getter for nResidents (called num residents for camelcase's sake)
+   * Getter for nResidents
    * 
    * @return nResidents, int for number of residents in the house
    */
-  public int getNumResidents() {
+  public int nResidents() {
     return this.residents.size();
   }
 
